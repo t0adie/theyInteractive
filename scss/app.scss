@@ -54,6 +54,7 @@
 // Custom colour variables
 // ----------
 
+$white: #FFF;
 $light: #efefef;
 
 // Viewport percentages
@@ -76,6 +77,13 @@ body {
   background-color: transparent;
 }
 
+// Custom background colour
+// ----------
+
+.bg-white {
+  background-color: $white;
+}
+
 // Manual width adjustments for the cell-centered class
 // ----------
 
@@ -95,6 +103,11 @@ body {
   }
 }
 
-.paralax {
+.paralax { 
   height: $fullHeight;
+  background-color: $light;
+  background-size: 54rem;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
