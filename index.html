@@ -11,9 +11,9 @@
 
 <body>
   <div data-sticky-container>
-    <div class="title-bar" data-sticky data-margin-top="0" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+    <div class="title-bar" data-sticky data-margin-top="0">
       <!-- Sticky menu plugin -->
-      <div class="title-bar-right">
+      <div class="title-bar-right" data-responsive-toggle="responsive-menu" data-hide-for="medium">
         <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
         <div class="title-bar-title">Menu</div>
       </div>
@@ -41,92 +41,90 @@
       </div>
     </section>
 
-    <section id="app" class="grid-x grid-padding-x">
-      <div class="large-12 cell">
-        <div class="callout">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or
-            totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
+    <section class="grid-x grid-padding-x">
+      <div class="large-6 cell">
+        <h3>Get the latest from the Village</h3>
+      </div>
+      <div class="large-6 cell">
+        <form>
           <div class="grid-x grid-padding-x">
-            <div class="large-6 cell">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to
-                know about using the framework.</p>
+            <div class="small-6 medium-6 cell">
+              <input type="text" placeholder="Your Name">
             </div>
-            <div class="large-6 cell">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses
-                offer you a chance to better understand how Foundation works and how you can master it to create
-                awesome projects.</p>
-            </div>
-            <div class="large-6 cell">
-              <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to
-                ask a question or show off your knowlege.</p>
+            <div class="small-6 medium-6 cell">
+              <input type="text" placeholder="Your Email">
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
 
-    <section id="recipes" class="grid-x grid-padding-x">
-      <div class="large-12 cell">
-        <div class="callout">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or
-            totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
-          <div class="grid-x grid-padding-x">
-            <div class="large-6 cell">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to
-                know about using the framework.</p>
-            </div>
-            <div class="large-6 cell">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses
-                offer you a chance to better understand how Foundation works and how you can master it to create
-                awesome projects.</p>
-            </div>
-            <div class="large-6 cell">
-              <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to
-                ask a question or show off your knowlege.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="videos" class="grid-x grid-padding-x">
+    <section class="grid-x grid-padding-x">
       <div class="large-12 cell">
         <div class="grid-x grid-padding-x">
-          <div class="large-6 cell">
-            <a href="#" class="cat">Watch<i class=""></i></a>
-            <p>My Plant-Based Lifestyle Discovery with Brooke Lark</p>
-            <a href="#" class="more"><i class=""></i>More Videos</a>
+          <div class="medium-6 cell">
+            <h3>The author.</h3>
+            <p>Cras tempor eu risus eget viverra. Aenean auctor vestibulum lacus, id viverra orci interdum non. Integer
+              tincidunt venenatis porta. Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit
+              lacus, ut tempor risus iaculis vel. </p>
+            <img src="http://placehold.it/460x61" />
           </div>
-          <div class="large-6 cell">
+          <div class="medium-6 cell">
+            <img class="th" src="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-x grid-padding-x text-center">
+      <div class="cell medium-10 large-8 cell-center">
+        <a href="#" class="cat">Praise<i class=""></i></a>
+        <h3>“Praesent eget massa nisi. Pellentesque habitant morbi tristique senectus netus et
+          malesuada”</h3>
+        <span class="subheader">Henrik Svensen, The New York Times</span>
+      </div>
+    </section>
+
+    <section class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <img src="" />
+          </div>
+          <div class="medium-6 cell">
+            <h3>The App.</h3>
+            <p>Cras tempor eu risus eget viverra. Aenean auctor vestibulum lacus, id viverra orci interdum non. Integer
+              tincidunt venenatis porta. Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit
+              lacus, ut tempor risus iaculis vel. </p>
+            <ul>
+              <li><i class=""></i>Nulla eu nunc libero. Sed eget laoreet mauris, viverra effi.</li>
+              <li><i class=""></i>Nulla eu nunc libero. Sed eget laoreet mauris.</li>
+              <li><i class=""></i>Nulla eu nunc libero. Sed eget laoreet mauris, viverra.</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="grid-x grid-padding-x">
+      <div class="large-12 cell text-center">
+        <div class="grid-x grid-margin-x">
+          <div class="large-5 cell-center">
+            <a href="#" class="shadow"><img src="http://placehold.it/500x360" alt="My Plant-Based Lifestyle Discovery with Brooke Lark"></a>
+            <a href="#" class="cat">Watch<i class=""></i></a>
+            <p class="h5 margin-2">My Plant-Based Lifestyle Discovery with Brooke Lark</p>
+            <a href="#" class="h6 more"><i class=""></i>More Videos</a>
+          </div>
+          <div class="large-5 cell-center">
+            <a href="#" class="shadow"><img src="http://placehold.it/500x360" alt="Creamy Vegan Cauliflower &amp; Leek Soup Recipe"></a>
             <a href="#" class="cat">Savour<i class=""></i></a>
-            <p>Creamy Vegan Cauliflower &amp; Leek Soup Recipe</p>
-            <a href="#" class="more"><i class=""></i>More Recipes</a>
+            <p class="h5 margin-2">Creamy Vegan Cauliflower &amp; Leek Soup Recipe</p>
+            <a href="#" class="h6 more"><i class=""></i>More Recipes</a>
           </div>
         </div>
       </div>
   </div>
-  </section>
-
-  <section id="contact" class="grid-x grid-padding-x">
-    <div class="large-12 cell">
-      <div class="grid-x grid-padding-x">
-        <div class="large-6 cell">
-          <a href="#" class="cat">Watch<i class=""></i></a>
-          <p>My Plant-Based Lifestyle Discovery with Brooke Lark</p>
-          <a href="#" class="more"><i class=""></i>More Videos</a>
-        </div>
-        <div class="large-6 cell">
-          <a href="#" class="cat">Savour<i class=""></i></a>
-          <p>Creamy Vegan Cauliflower &amp; Leek Soup Recipe</p>
-          <a href="#" class="more"><i class=""></i>More Recipes</a>
-        </div>
-      </div>
-    </div>
-    </div>
   </section>
   </div><!-- .grid-container -->
 

@@ -5,7 +5,7 @@
 @import 'motion-ui';
 
 @include foundation-global-styles;
-// @include foundation-grid;
+@include foundation-grid;
 // @include foundation-flex-grid;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
@@ -51,3 +51,21 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+$lrg: 70%;
+$med: 90%;
+
+@media screen and (min-width: 40em) {
+    .cell-center {
+        @include xy-cell($lrg);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .cell-center {
+        @include xy-cell($med);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
