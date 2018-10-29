@@ -51,8 +51,41 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import "./fontawesome/scss/fontawesome.scss";
+@import "./fontawesome/scss/brands.scss";
+
+.user {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-user);
+  }
+}
+
+.twitter {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
+
+// colours
+$light: #efefef;
+
+// percentages
 $lrg: 70%;
 $med: 90%;
+
+body {
+    background-color: $light;
+}
+
+.title-bar {
+    background-color: transparent; 
+}
 
 @media screen and (min-width: 40em) {
     .cell-center {
