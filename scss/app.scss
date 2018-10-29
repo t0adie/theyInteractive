@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-@import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import "settings";
+@import "foundation";
+@import "motion-ui";
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -51,54 +51,40 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-@import "./fontawesome/scss/fontawesome.scss";
-@import "./fontawesome/scss/brands.scss";
+// Custom colour variables
+// ----------
 
-.user {
-  @extend %fa-icon;
-  @extend .fas;
-
-  &:before {
-    content: fa-content($fa-var-user);
-  }
-}
-
-.twitter {
-  @extend %fa-icon;
-  @extend .fab;
-
-  &:before {
-    content: fa-content($fa-var-twitter);
-  }
-}
-
-// colours
 $light: #efefef;
 
-// percentages
+// Percentages
+// ----------
+
 $lrg: 70%;
 $med: 90%;
 
 body {
-    background-color: $light;
+  background-color: $light;
 }
 
 .title-bar {
-    background-color: transparent; 
+  background-color: transparent;
 }
 
+// Manual width adjustments for the cell-centered class
+// ----------
+
 @media screen and (min-width: 40em) {
-    .cell-center {
-        @include xy-cell($lrg);
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .cell-center {
+    @include xy-cell($lrg);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (min-width: 64em) {
-    .cell-center {
-        @include xy-cell($med);
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .cell-center {
+    @include xy-cell($med);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
