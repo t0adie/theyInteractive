@@ -66,7 +66,7 @@ $fullHeight: 100vh;
 // Percentages
 // ----------
 
-$lrg: 70%;
+$lrg: 50%;
 $med: 90%;
 
 body {
@@ -87,17 +87,21 @@ body {
 // Manual width adjustments for the cell-centered class
 // ----------
 
-@media screen and (min-width: 40em) {
+.hero {
+  height: $fullHeight;
+}
+
+@media screen and (min-width: 60em) {
   .cell-center {
-    @include xy-cell($lrg);
+    @include xy-cell($med);
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 40em) {
   .cell-center {
-    @include xy-cell($med);
+    @include xy-cell($lrg);
     margin-left: auto;
     margin-right: auto;
   }
