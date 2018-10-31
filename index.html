@@ -12,6 +12,38 @@
 </head>
 
 <body>
+
+  <!-- Modal window for pre-order form -->
+
+  <div id="preorder" class="reveal" data-reveal>
+      <div class="title-bar">
+        <div class="title-bar-right">
+          <button data-close type="button" class="button">X</button></div>
+      </div>
+      <h1>Pre-Order this book man!</h1>
+      <form>
+        <div class="grid-x grid-padding-x">
+          <div class="small-6 medium-6 cell">
+            <input type="text" placeholder="Your Name">
+          </div>
+          <div class="small-6 medium-6 cell">
+            <input type="text" placeholder="Your Email">
+          </div>
+        </div>
+      </form>
+    </div>
+
+  <!-- Modal window for newsletter form -->
+
+  <div id="newsletter" class="reveal" data-reveal>
+    <div class="title-bar">
+      <div class="title-bar-right">
+        <button data-close type="button" class="button">X</button></div>
+    </div>
+    <h1>Welcome To The Village</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend lorem eros, nec cursus quam bibendum nec.</p>
+  </div>
+
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="title-bar">
@@ -20,7 +52,7 @@
           <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
           <div class="title-bar-title">Menu</div>
         </div>
-        <div class="title-bar-right"><button type="button" class="success button">Get The Book</button></div>
+        <div class="title-bar-right"><button data-open="preorder" type="button" class="button">Get The Book</button></div>
       </div>
       <div class="title-bar">
         <div id="responsive-menu" class="title-bar-left">
@@ -57,8 +89,8 @@
           <div class="cell cell-center">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend lorem eros, nec cursus quam
               bibendum nec. Sed mollis ac justo ut scelerisque. Nullam turpis tortor, iaculis in lorem quis.</p>
-            <button type="button" class="button">Learn More</button>
-            <button type="button" class="button">Pre-Order</button>
+            <button type="button" class="button grid-margin-x">Learn More</button>
+            <button data-open="preorder" type="button" class="button grid-margin-x">Pre-Order</button>
           </div>
         </div>
       </div>
@@ -75,9 +107,8 @@
             <div class="grid-x grid-padding-x">
               <div class="small-6 medium-6 cell">
                 <input type="text" placeholder="Your Name">
-              </div>
-              <div class="small-6 medium-6 cell">
                 <input type="text" placeholder="Your Email">
+                <button data-open="newsletter" type="button" class="round"></button>
               </div>
             </div>
           </form>
@@ -94,7 +125,7 @@
           <p>Cras tempor eu risus eget viverra. Aenean auctor vestibulum lacus, id viverra orci interdum non. Integer
             tincidunt venenatis porta. Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit
             lacus, ut tempor risus iaculis vel. </p>
-          <img src="http://placehold.it/460x61" />
+          <img src="assets/img/signature.png" />
         </div>
         <div class="medium-6 cell">
           <img class="th" src="" />
@@ -134,7 +165,7 @@
     </div>
   </section>
 
-  <section id="contact" class="grid-x grid-padding-x">
+  <div class="grid-x grid-padding-x">
     <div class="large-12 cell text-center">
       <div class="grid-x grid-margin-x">
         <div class="medium-6 grid-margin-x">
@@ -153,8 +184,7 @@
         </div>
       </div>
     </div>
-    </div>
-  </section>
+  </div>
 
   <div class="grid-container">
     <div class="grid-x grid-padding-x">

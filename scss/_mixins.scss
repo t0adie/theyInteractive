@@ -1,0 +1,12 @@
+@mixin margin-auto() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin round-button() {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border-style: solid;
+    border-radius: 50px;
+}

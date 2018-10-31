@@ -3,6 +3,7 @@
 @import "settings";
 @import "foundation";
 @import "motion-ui";
+@import "mixins";
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -54,7 +55,7 @@
 // Custom colour variables
 // ----------
 
-$white: #FFF;
+$white: #fff;
 $light: #efefef;
 
 // Viewport percentages
@@ -63,13 +64,10 @@ $light: #efefef;
 $fullWidth: 100vw;
 $fullHeight: 100vh;
 
-// Percentages
-// ----------
-
-$lrg: 50%;
-$med: 90%;
-
-body {
+$percentages: (
+    lrg: 60%; med: 75%; sml: 90%;
+  )
+  body {
   background-color: $light;
 }
 
@@ -79,35 +77,37 @@ body {
 
 // Custom background colour
 // ----------
-
 .bg-white {
   background-color: $white;
 }
-
 // Manual width adjustments for the cell-centered class
 // ----------
-
 .hero {
   height: $fullHeight;
+}
+.round {
+  @include round-button();
 }
 
 @media screen and (min-width: 60em) {
   .cell-center {
-    @include xy-cell($med);
-    margin-left: auto;
-    margin-right: auto;
+    @include xy-cell($percentages(lrg));
+    @include margin-auto();
   }
 }
-
+@media screen and (min-width: 50em) {
+  .cell-center {
+    @include xy-cell($percentages(med));
+    @include margin-auto();
+  }
+}
 @media screen and (min-width: 40em) {
   .cell-center {
-    @include xy-cell($lrg);
-    margin-left: auto;
-    margin-right: auto;
+    @include xy-cell($percentages(sml));
+    @include margin-auto();
   }
 }
-
-.paralax { 
+.paralax {
   height: $fullHeight;
   background-color: $light;
   background-size: 54rem;
