@@ -7,8 +7,8 @@
 
 @include foundation-global-styles;
 @include foundation-grid;
-// @include foundation-flex-grid;
-@include foundation-xy-grid-classes;
+@include foundation-flex-grid;
+// @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -57,61 +57,156 @@
 
 $white: #fff;
 $light: #efefef;
+$dark-green: #144e2f;
+$light-green: #527b6d;
 
 // Viewport percentages
 // ----------
 
 $fullWidth: 100vw;
-$fullHeight: 100vh;
+$fullHeight: 80vh;
 
-$percentages: (
-    lrg: 60%; med: 75%; sml: 90%;
-  )
-  body {
+$lrg: 60%;
+$med: 75%;
+$sml: 90%;
+
+body {
   background-color: $light;
+}
+
+.bg-white {
+  background-color: $white;
 }
 
 .title-bar {
   background-color: transparent;
 }
 
-// Custom background colour
-// ----------
-.bg-white {
-  background-color: $white;
-}
-// Manual width adjustments for the cell-centered class
-// ----------
-.hero {
-  height: $fullHeight;
-}
-.round {
-  @include round-button();
+.arrow {
+  margin: 0rem 0.5rem;
 }
 
-@media screen and (min-width: 60em) {
-  .cell-center {
-    @include xy-cell($percentages(lrg));
-    @include margin-auto();
+.menu {
+  text-transform: uppercase;
+  a {
+    padding: 0.7rem 0.8rem;
+    color: $dark-green;
+  }
+  .social {
+    padding-right: 0px;
   }
 }
-@media screen and (min-width: 50em) {
-  .cell-center {
-    @include xy-cell($percentages(med));
-    @include margin-auto();
+
+.menu-icon {
+  @include hamburger($dark-green);
+}
+
+// Custom background colour
+// ----------
+
+.bg-dark-green {
+  background-color: $dark-green;
+}
+.bg-light-green {
+  background-color: $light-green;
+}
+
+// Manual width adjustments for the cell-centered class
+// ----------
+.hero .row {
+  @include row-padding(4rem, 0rem);
+}
+
+.dynamic,
+.author,
+.app {
+  @include row-padding(5rem, 0rem);
+  min-height: 50vh;
+}
+
+.overlap-left {
+  margin-left: -3rem;
+}
+.overlap-right {
+  margin-right: -3rem;
+}
+
+.float-right {
+  position: absolute;
+  right: 0;
+  padding: 0;
+}
+
+.float-left {
+  padding: -3em;
+}
+
+.column-center {
+  @include absolute-center;
+}
+
+// Custom classes for the submit button
+// ----------
+
+.round {
+  @include circle(40px);
+  border-color: $black;
+  cursor: pointer;
+}
+.hollow {
+  @include hollow($dark-green, 2px);
+}
+
+// Custom form fields
+// ----------
+
+.underline {
+  @include underline(2px, $black, solid);
+  &::placeholder {
+    color: $black;
   }
 }
-@media screen and (min-width: 40em) {
-  .cell-center {
-    @include xy-cell($percentages(sml));
-    @include margin-auto();
+
+.newsletter {
+  @include row-padding(1.5rem, 0rem);
+
+  h3 {
+    margin-bottom: 0px;
+  }
+  .underline {
+    margin-bottom: 0px;
   }
 }
+
 .paralax {
-  height: $fullHeight;
+  height: $fullWidth;
   background-color: $light;
-  background-size: 54rem;
+  background-size: contain;
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
+}
+
+// Footer
+// ----------
+
+footer span {
+  font-size: 60%;
+}
+
+.footer {
+  border: none;
+  border-top: solid #ccc 1px;
+  @include row-padding(5rem, 0);
+}
+
+@media screen and (min-width: 40em) {
+  .paralax {
+    height: $fullHeight;
+  }
+}
+@media screen and (min-width: 64em) {
+  .paralax {
+    height: $fullHeight;
+  }
 }

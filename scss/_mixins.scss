@@ -3,10 +3,27 @@
     margin-right: auto;
 }
 
-@mixin round-button() {
-    width: 50px;
-    height: 50px;
-    background: none;
-    border-style: solid;
-    border-radius: 50px;
+@mixin row-padding($height, $width) {
+    padding: $height $width;
 }
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: $size / 2;
+}
+
+@mixin hollow($colour, $width) {
+    color: $colour;
+    background: none;
+    border-color: $colour;
+    border-style: solid;
+    border-width: $width;
+}
+
+@mixin underline($stroke, $colour, $style) {
+    box-shadow: none !important;
+    border: none;
+    border-bottom: $colour $stroke $style;
+}
+
