@@ -3,6 +3,7 @@
 @import "settings";
 @import "foundation";
 @import "motion-ui";
+@import "fonts";
 @import "mixins";
 
 @include foundation-global-styles;
@@ -52,6 +53,22 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+// Custom Fonts
+// ----------
+
+@include font-face(
+  "RobotoCondensed",
+  "RobotoCondensed-Bold",
+  "RobotoCondensed",
+  "sans"
+);
+@include font-face(
+  "PlayfairDisplay",
+  "PlayfairDisplay-Regular",
+  "PlayfairDisplay",
+  "serif"
+);
+
 // Custom colour variables
 // ----------
 
@@ -80,6 +97,39 @@ body {
 
 .title-bar {
   background-color: transparent;
+}
+
+// Fonts
+// ----------
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+p {
+  font-family: "PlayfairDisplay", "serif";
+}
+
+.hero .h1 {
+  font-size: 12rem;
+  margin-top: -4rem;
+}
+
+.hero .h2 {
+  font-size: 11rem;
+  line-height: 6rem;
+}
+
+.hero .h3 {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.hero .h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .arrow {
@@ -121,14 +171,17 @@ body {
 .author,
 .app {
   @include row-padding(5rem, 0rem);
-  height: 85vh;
 }
 .review {
   @include row-padding(0rem, 0rem 4rem);
 }
 
+.book {
+  z-index: 999;
+}
+
 .overlap-left {
-  margin-left: -3rem;
+  margin-left: -5rem;
 }
 .overlap-right {
   margin-right: -3rem;
@@ -141,7 +194,7 @@ body {
   background-position: right;
   background-repeat: no-repeat;
   background-size: 40rem;
-  filter: drop-shadow(2rem 3rem 4rem rgba(0,0,0,0.25));
+  filter: drop-shadow(2rem 3rem 4rem rgba(0, 0, 0, 0.25));
 }
 
 .float-left {
@@ -153,7 +206,7 @@ body {
 }
 
 .shadow {
-  filter: drop-shadow(0rem 0rem 2rem rgba(0,0,0,0.15));
+  filter: drop-shadow(0rem 0rem 2rem rgba(0, 0, 0, 0.15));
 }
 .shadow-clip {
   clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
@@ -171,6 +224,10 @@ body {
 }
 .hollow {
   @include hollow($dark-green, 2px);
+}
+
+.play {
+  @include css-triangle(0.75rem, $dark-green, right);
 }
 
 // Custom form fields
@@ -214,6 +271,13 @@ footer span {
   border: none;
   border-top: solid #ccc 1px;
   @include row-padding(5rem, 0);
+}
+
+@media screen and (orientation: landscape) {
+  .show-for-landscape,
+  .hide-for-portrait {
+    display: flex !important;
+  }
 }
 
 @media screen and (min-width: 65em) {

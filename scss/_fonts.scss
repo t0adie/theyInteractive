@@ -1,0 +1,21 @@
+// Font declarations
+// ----------
+
+@mixin font-face($style-name, $file, $family, $category: "") {
+  $filepath: "./assets/fonts/" + $family + "/" + $file;
+  @font-face {
+    font-family: "#{$style-name}";
+    src: url($filepath+".ttf") format("truetype"),
+      url($filepath+".otf") format("opentype");
+  }
+  %#{$style-name} {
+    font: {
+      @if $category != "" {
+        font-family: "#{$style-name}", #{$category};
+      } @else {
+        font-family: "#{$style-name}";
+        font-weight: normal;
+      }
+    }
+  }
+}
