@@ -13,15 +13,19 @@
 
 <body>
 
+  <!-- Preloader window -->
+
+  <div class="preloader"></div>
+
   <!-- Modal window for pre-order form -->
 
   <div id="preorder" class="reveal shadow" data-reveal>
     <div class="row title-bar">
       <div class="column small-10 title-bar-left">
-        <h3>Pre-Order this book man!</h3>
+        <h3>Start A New Path, Today!</h3>
       </div>
       <div class="column small-2 title-bar-right">
-        <button data-close type="button" class="button round hollow">X</button>
+        <button data-close type="button" class="round hollow">X</button>
       </div>
     </div>
     <form>
@@ -51,7 +55,7 @@
         <h3>Welcome To The Village</h3>
       </div>
       <div class="column small-2 title-bar-right">
-        <button data-close type="button" class="button round hollow">X</button>
+        <button data-close type="button" class="round hollow">X</button>
       </div>
     </div>
     <div class="row">
@@ -65,14 +69,25 @@
       <div class="column small-10 medium-5">
         <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Video Thumbsml.png, small], [assets/img/interchange/Video Thumbmed.png, medium], [assets/img/interchange/Video Thumblrg.png, ]"
             alt="My Plant-Based Lifestyle Discovery with Brooke Lark"></a>
-        <a href="#" class="cat">Watch<i class="arrow fas fa-angle-up"></i></a>
+        <a href="#" class="cat"><span>Watch</span><svg class="icons arrow" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 18">
+            <path d="M1 8l8-7 8 7" />
+          </svg></a>
         <p class="h6 margin-2">My Plant-Based Lifestyle Discovery with Brooke Lark</p>
-        <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Videos</a>
+        <a href="#" class="h6 more"><svg class="icons arrow" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 18">
+            <path d="M1 9h15M9 1l7 8m-7 9l7-9" />
+          </svg>
+          <span>More Videos</span>
+        </a>
       </div>
       <div class="column small-10 medium-5">
         <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Recipe Thumgsml, small], [assets/img/interchange/Recipe Thumbmed.png, medium], [assets/img/interchange/Recipe Thumblrg.png, ]"
             alt="Creamy Vegan Cauliflower &amp; Leek Soup Recipe"></a>
-        <a href="#" class="cat">Savour<i class="arrow fas fa-angle-up"></i></a>
+        <a href="#" class="cat"><span>Savour</span><svg class="icons arrow" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 18">
+            <path d="M1 8l8-7 8 7" />
+          </svg></a>
         <p class="h6 margin-2">Creamy Vegan Cauliflower &amp; Leek Soup Recipe</p>
         <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Recipes</a>
       </div>
@@ -85,7 +100,7 @@
   <div id="menu" class="reveal shadow" data-reveal>
     <div class="title-bar">
       <div class="title-bar-right">
-        <button data-close type="button" class="button round hollow">X</button></div>
+        <button data-close type="button" class="round hollow">X</button></div>
     </div>
     <div class="row align-center title-bar">
       <div class="column small-8 text-center">
@@ -147,17 +162,19 @@
 
   <!-- Hero container -->
 
-  <div class="container hero">
+  <div class="hero">
     <div class="row align-middle align-center show-for-landscape paralax" data-interchange="[assets/img/interchange/Greens2med.png, medium], [assets/img/interchange/Greens2lrg.png, large]"
       data-parallax>
-      <div class="column medium-3 overlap-left">
+      <div class="column overlap-right">
+          <p class="h4 subheader">Discover your guide to a</p>
         <p class="h1 text-right">new</p>
       </div>
       <div class="column medium-5 book">
         <img data-interchange="[assets/img/interchange/Book_med.png, medium], [assets/img/interchange/Book_lrg.png, large]" />
       </div>
-      <div class="column medium-3 overlap-left">
+      <div class="column overlap-left">
         <p class="h1">you.</p>
+        <p class="subheader roboto-b">Watch the trailer</p>
       </div>
     </div>
     <div class="row show-for-portrait">
@@ -269,17 +286,23 @@
   <!-- Dynamic container -->
 
   <div class="row align-spaced text-center dynamic">
-    <div class="column small-10 medium-5">
+    <div class="column small-10 medium-5 large-4">
       <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Video Thumbsml.png, small], [assets/img/interchange/Video Thumbmed.png, medium], [assets/img/interchange/Video Thumblrg.png, ]"
           alt="My Plant-Based Lifestyle Discovery with Brooke Lark"></a>
-      <a href="#" class="cat">Watch<i class="arrow fas fa-angle-up"></i></a>
+      <a href="#" class="cat"><span>Watch</span><svg class="icons arrow" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 18 18">
+          <path d="M1 8l8-7 8 7" />
+        </svg></i></a>
       <p class="h5 margin-2">My Plant-Based Lifestyle Discovery with Brooke Lark</p>
       <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Videos</a>
     </div>
-    <div class="column small-10 medium-5">
+    <div class="column small-10 medium-5 large-4">
       <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Recipe Thumgsml, small], [assets/img/interchange/Recipe Thumbmed.png, medium], [assets/img/interchange/Recipe Thumblrg.png, ]"
           alt="Creamy Vegan Cauliflower &amp; Leek Soup Recipe"></a>
-      <a href="#" class="cat">Savour<i class="arrow fas fa-angle-up"></i></a>
+      <a href="#" class="cat"><span>Savour</span><svg class="icons arrow" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 18 18">
+          <path d="M1 8l8-7 8 7" />
+        </svg></i></a>
       <p class="h5 margin-2">Creamy Vegan Cauliflower &amp; Leek Soup Recipe</p>
       <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Recipes</a>
     </div>

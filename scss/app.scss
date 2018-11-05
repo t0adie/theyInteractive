@@ -96,6 +96,18 @@ $lrg: 60%;
 $med: 75%;
 $sml: 90%;
 
+// ----------
+// Custom background colour
+// ----------
+
+.bg-dark-green {
+  background-color: $dark-green;
+}
+
+.bg-light-green {
+  background-color: $light-green;
+}
+
 body {
   background-color: $light;
 }
@@ -104,10 +116,7 @@ body {
   background-color: $white;
 }
 
-.title-bar {
-  background-color: transparent;
-}
-
+// ----------
 // Fonts
 // ----------
 
@@ -137,8 +146,8 @@ h1,
 }
 
 .hero .h2 {
-  font-size: 11rem;
-  line-height: 6rem;
+  font-size: 9rem;
+  line-height: 5rem;
 }
 
 .hero .h3 {
@@ -147,8 +156,9 @@ h1,
 }
 
 .hero .h4 {
-  font-size: 2rem;
-  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 0;
+  margin-bottom: -1rem;
 }
 
 .roboto-b {
@@ -156,21 +166,32 @@ h1,
   text-transform: uppercase;
 }
 
-.rem {
-  padding: 1.5rem 0rem 2.5rem;
-}
-.arrow {
-  margin: 0rem 0.5rem;
+// ----------
+// Preloader
+// ----------
+
+.preloader {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: $light;
+  z-index: 999;
 }
 
-.button {
-  margin-right: 0rem 1.25rem;
+// ----------
+// Navigation
+// ----------
+
+.title-bar {
+  background-color: transparent;
 }
+
 .menu {
   text-transform: uppercase;
   display: inline-flex;
   a {
-    padding: 0.35rem 1rem;
+    padding: 0.35rem 0.79rem;
     color: $dark-green;
   }
   .social {
@@ -179,30 +200,6 @@ h1,
   &:last-child {
     padding-left: 1rem;
   }
-}
-
-.author {
-  padding-top: 12rem;
-  background-color: #efefef;
-  background-position-x: left;
-  background-repeat: no-repeat;
-  background-size: 25vw;
-  background-blend-mode: multiply;
-}
-.review {
-  padding-top: 8rem;
-}
-.app {
-  background-color: #efefef;
-  background-position-x: right;
-  background-repeat: no-repeat;
-  background-size: 25vw;
-  background-blend-mode: multiply;
-  margin-top: -7rem;
-  padding-top: 15rem !important;
-}
-.social {
-  @include social();
 }
 
 .menu-icon {
@@ -220,7 +217,6 @@ h1,
 }
 
 // Style for the mobile menu overlay
-// ----------
 
 #menu {
   width: 100%;
@@ -228,20 +224,83 @@ h1,
   font-size: 3rem;
 }
 
-// Custom background colour
+// ----------
+// Hero Banner
 // ----------
 
-.bg-dark-green {
-  background-color: $dark-green;
+.hero .row {
+  @include row-padding(4rem, 0rem);
 }
-.bg-light-green {
-  background-color: $light-green;
+
+.paralax {
+  height: $fullWidth;
+  background-color: $light;
+  background-size: contain;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.book {
+  display: none;
+  z-index: 999;
+}
+
+.overlap-left {
+  margin-left: -5rem;
+}
+
+.overlap-right {
+  margin-right: -5rem;
+}
+
+// ----------
+// Content
+// ----------
+
+.rem {
+  padding: 1.5rem 0rem 2.5rem;
+}
+.arrow {
+  margin: 0rem 0.5rem;
+}
+
+.button {
+  margin-right: 0rem 1.25rem;
+  border: none;
+  &:focus,
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.author {
+  padding-top: 12rem;
+  background-color: #efefef;
+  background-position-x: left;
+  background-repeat: no-repeat;
+  background-size: 25vw;
+  background-blend-mode: multiply;
+}
+
+.review {
+  padding-top: 8rem;
+}
+
+.app {
+  background-color: #efefef;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: 25vw;
+  background-blend-mode: multiply;
+  margin-top: -7rem;
+  padding-top: 15rem !important;
 }
 
 // Manual width adjustments for the cell-centered class
-// ----------
-.hero .row {
-  @include row-padding(4rem, 0rem);
+
+.column-center {
+  @include absolute-center;
 }
 
 .row.dynamic::before {
@@ -251,6 +310,9 @@ h1,
 .subscribe {
   @include row-padding(2rem, 0rem);
 }
+
+// Background Images
+
 #subscribe {
   background-image: url(./assets/img/interchange/Greens2lrg.png);
   background-position: 50% 434px;
@@ -260,19 +322,9 @@ h1,
 }
 #preorder {
   background-image: url(./assets/img/interchange/Tomatolrg.png);
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: 15rem;
-}
-.book {
-  z-index: 999;
-}
-
-.overlap-left {
-  margin-left: -5rem;
-}
-.overlap-right {
-  margin-right: -3rem;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 15rem;
 }
 
 .float-right {
@@ -289,10 +341,6 @@ h1,
   padding: -3em;
 }
 
-.column-center {
-  @include absolute-center;
-}
-
 .shadow {
   filter: drop-shadow(0rem 0rem 2rem rgba(0, 0, 0, 0.15));
 }
@@ -302,22 +350,45 @@ h1,
   height: 100%;
 }
 
-// Custom classes for the submit button
+// ----------
+// Buttons and Icons
 // ----------
 
 .round {
   @include circle(40px);
   border-color: $black;
+  transition: $button-transition;
   cursor: pointer;
 }
+
 .hollow {
   @include hollow($dark-green, 2px);
+  transition: $button-transition;
+  &:hover,
+  &:active {
+    @include hollow-fill($dark-green);
+  }
 }
 
 .play {
   @include css-triangle(0.75rem, $dark-green, right);
 }
 
+.icons {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: $dark-green;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  transform: translateY(40%);
+}
+
+.social {
+  @include social();
+}
+
+// ----------
 // Custom form fields
 // ----------
 
@@ -339,15 +410,7 @@ h1,
   }
 }
 
-.paralax {
-  height: $fullWidth;
-  background-color: $light;
-  background-size: contain;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-}
-
+// ----------
 // Footer
 // ----------
 
@@ -361,6 +424,10 @@ footer span {
   @include row-padding(5rem, 0);
 }
 
+// ----------
+// Media sizes
+// ----------
+
 @media screen and (orientation: landscape) {
   .show-for-landscape,
   .hide-for-portrait {
@@ -369,8 +436,9 @@ footer span {
 }
 
 @media screen and (min-width: 65em) {
+  .row.hero,
   .row.author,
   .row.app {
-    max-width: 100%;
+    width: 100%;
   }
 }

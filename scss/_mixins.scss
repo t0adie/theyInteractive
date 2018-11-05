@@ -26,6 +26,10 @@
     border-style: solid;
     border-width: $width;
 }
+@mixin hollow-fill($colour) {
+    color: $white;
+    background: $colour;
+}
 
 @mixin underline($stroke, $colour, $style) {
     box-shadow: none !important;
