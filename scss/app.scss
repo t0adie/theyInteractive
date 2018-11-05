@@ -9,7 +9,7 @@
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-flex-grid;
-// @include foundation-xy-grid-classes;
+@include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -68,6 +68,15 @@
   "PlayfairDisplay",
   "serif"
 );
+@include font-face(
+  "PlayfairDisplayBold",
+  "PlayfairDisplay-Bold",
+  "PlayfairDisplay",
+  "serif"
+);
+
+$playfairBold: "PlayfairDisplay", "serif";
+$robotoBold: "RobotoCondensed", "sans";
 
 // Custom colour variables
 // ----------
@@ -108,8 +117,18 @@ h2,
 .h2,
 h3,
 .h3,
+h4,
+.h4,
+h5,
+.h5,
 p {
-  font-family: "PlayfairDisplay", "serif";
+  font-family: $playfairBold;
+}
+
+h1,
+.h1 {
+  font-size: 4rem;
+  padding-bottom: 2rem;
 }
 
 .hero .h1 {
@@ -132,23 +151,81 @@ p {
   text-transform: uppercase;
 }
 
+.roboto-b {
+  font-family: $robotoBold;
+  text-transform: uppercase;
+}
+
+.rem {
+  padding: 1.5rem 0rem 2.5rem;
+}
 .arrow {
   margin: 0rem 0.5rem;
 }
 
+.button {
+  margin-right: 0rem 1.25rem;
+}
 .menu {
   text-transform: uppercase;
+  display: inline-flex;
   a {
-    padding: 0.7rem 0.8rem;
+    padding: 0.35rem 1rem;
     color: $dark-green;
   }
   .social {
-    padding-right: 0px;
+    @include social();
   }
+  &:last-child {
+    padding-left: 1rem;
+  }
+}
+
+.author {
+  padding-top: 12rem;
+  background-color: #efefef;
+  background-position-x: left;
+  background-repeat: no-repeat;
+  background-size: 25vw;
+  background-blend-mode: multiply;
+}
+.review {
+  padding-top: 8rem;
+}
+.app {
+  background-color: #efefef;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: 25vw;
+  background-blend-mode: multiply;
+  margin-top: -7rem;
+  padding-top: 15rem !important;
+}
+.social {
+  @include social();
 }
 
 .menu-icon {
   @include hamburger($dark-green);
+}
+.title-bar {
+  color: $dark-green;
+}
+
+.primary {
+  @include show-for(large);
+}
+.mobile {
+  @include hide-for(large);
+}
+
+// Style for the mobile menu overlay
+// ----------
+
+#menu {
+  width: 100%;
+  height: 100vh;
+  font-size: 3rem;
 }
 
 // Custom background colour
@@ -167,15 +244,26 @@ p {
   @include row-padding(4rem, 0rem);
 }
 
-.dynamic,
-.author,
-.app {
-  @include row-padding(5rem, 0rem);
+.row.dynamic::before {
+  content: "";
+  order: 0;
 }
-.review {
-  @include row-padding(0rem, 0rem 4rem);
+.subscribe {
+  @include row-padding(2rem, 0rem);
 }
-
+#subscribe {
+  background-image: url(./assets/img/interchange/Greens2lrg.png);
+  background-position: 50% 434px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60vh;
+}
+#preorder {
+  background-image: url(./assets/img/interchange/Tomatolrg.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 15rem;
+}
 .book {
   z-index: 999;
 }

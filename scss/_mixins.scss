@@ -3,6 +3,12 @@
     margin-right: auto;
 }
 
+@mixin social() {
+    display: unset;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
 @mixin row-padding($height, $width) {
     padding: $height $width;
 }
@@ -26,4 +32,3 @@
     border: none;
     border-bottom: $colour $stroke $style;
 }
-

@@ -13,29 +13,133 @@
 
 <body>
 
+  <!-- Modal window for pre-order form -->
+
+  <div id="preorder" class="reveal shadow" data-reveal>
+    <div class="row title-bar">
+      <div class="column small-10 title-bar-left">
+        <h3>Pre-Order this book man!</h3>
+      </div>
+      <div class="column small-2 title-bar-right">
+        <button data-close type="button" class="button round hollow">X</button>
+      </div>
+    </div>
+    <form>
+      <div class="row">
+        <div class="column small-6">
+          <p><img data-interchange="[assets/img/interchange/Book_med.png, medium], [assets/img/interchange/Book_lrg.png, large]" /></p>
+          <p>Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit lacus, ut tempor risus iaculis
+            vel.</p>
+        </div>
+        <div class="column small-6">
+          <input type="text" class="underline" placeholder="Your Name">
+          <input type="email" class="underline" placeholder="Your Email">
+          <input type="text" class="underline" placeholder="Address">
+          <input type="text" class="underline" placeholder="Card Number">
+          <button type="button" class="round hollow entity"><i class='fas fa-arrow-right'></i></button>
+        </div>
+      </div>
+  </div>
+  </form>
+  </div>
+
+  <!-- Modal window for newsletter form -->
+
+  <div id="subscribe" class="reveal shadow" data-reveal>
+    <div class="row title-bar">
+      <div class="column small-10 title-bar-left">
+        <h3>Welcome To The Village</h3>
+      </div>
+      <div class="column small-2 title-bar-right">
+        <button data-close type="button" class="button round hollow">X</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend lorem eros, nec cursus quam bibendum
+          nec.</p>
+      </div>
+    </div>
+    <div class="row align-center text-center subscribe">
+      <div class="column small-10 medium-5">
+        <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Video Thumbsml.png, small], [assets/img/interchange/Video Thumbmed.png, medium], [assets/img/interchange/Video Thumblrg.png, ]"
+            alt="My Plant-Based Lifestyle Discovery with Brooke Lark"></a>
+        <a href="#" class="cat">Watch<i class="arrow fas fa-angle-up"></i></a>
+        <p class="h6 margin-2">My Plant-Based Lifestyle Discovery with Brooke Lark</p>
+        <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Videos</a>
+      </div>
+      <div class="column small-10 medium-5">
+        <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Recipe Thumgsml, small], [assets/img/interchange/Recipe Thumbmed.png, medium], [assets/img/interchange/Recipe Thumblrg.png, ]"
+            alt="Creamy Vegan Cauliflower &amp; Leek Soup Recipe"></a>
+        <a href="#" class="cat">Savour<i class="arrow fas fa-angle-up"></i></a>
+        <p class="h6 margin-2">Creamy Vegan Cauliflower &amp; Leek Soup Recipe</p>
+        <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Recipes</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal window for popup menu -->
+
+  <div id="menu" class="reveal shadow" data-reveal>
+    <div class="title-bar">
+      <div class="title-bar-right">
+        <button data-close type="button" class="button round hollow">X</button></div>
+    </div>
+    <div class="row align-center title-bar">
+      <div class="column small-8 text-center">
+        <ul class="vertical menu">
+          <li><a href="#book">The Book</a></li>
+          <li><a href="#app">The App</a></li>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#contact">Let's Connect</a></li>
+          <li>
+            <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social"><i class="fab fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- Top navigation -->
 
-  <div class="container text-center">
+  <div class="container text-center primary">
     <div class="row align-spaced title-bar">
       <div class="column small-5 medium-2">
         <a href="#"><img src="assets/img/interchange/vil_pl_reg.png" width="150" alt="Plant Based Village" /></a>
       </div>
-      <div class="column small-2 text-right" data-responsive-toggle="responsive-menu-top" data-hide-for="large">
-        <button class="menu-icon" type="button" data-toggle="responsive-menu-top"></button>
-      </div>
-      <div id="responsive-menu-top" class="column small-6 large-8">
+      <div class="column small-6 large-8">
         <ul class="menu">
           <li><a href="#book">The Book</a></li>
           <li><a href="#app">The App</a></li>
           <li><a href="#recipes">Recipes</a></li>
           <li><a href="#videos">Videos</a></li>
           <li><a href="#contact">Let's Connect</a></li>
-          <li><a href="#" class="social"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#" class="social"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" class="social"><i class="fab fa-youtube"></i></a></li>
+          <li>
+            <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social"><i class="fab fa-youtube"></i></a>
+          </li>
         </ul>
       </div>
       <div id="responsive-menu" class="column small-5 medium-2">
+        <button data-open="preorder" type="button" class="button bg-light-green">Get The Book</button>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mobile">
+    <div class="row align-center title-bar">
+      <div class="column small-4">
+        <a href="#"><img src="assets/img/interchange/vil_pl_reg.png" width="150" alt="Plant Based Village" /></a>
+      </div>
+      <div class="column small-4 text-center" data-hide-for="large">
+        <button class="menu-icon" type="button" data-open="menu"></button>
+      </div>
+      <div id="responsive-menu" class="column small-4">
         <button data-open="preorder" type="button" class="button bg-light-green">Get The Book</button>
       </div>
     </div>
@@ -57,15 +161,15 @@
       </div>
     </div>
     <div class="row show-for-portrait">
-      <div class="column small-10 small-offset-1 medium-10 medium-offset-1">
+      <div class="column small-11 small-centered medium-10">
         <p class="h3 subheader">Discover your guide to a</p>
         <p class="h2 margin-down text-left">new you.</p>
       </div>
-      <div class="column small-10 small-offset-1 medium-8 medium-offset-2">
+      <div class="column small-11 small-centered medium-8">
         <img data-interchange="[assets/img/interchange/Book_med.png, small], [assets/img/interchange/Book_med.png, medium]" />
       </div>
-      <div class="column small-10 medium-10 medium-offset-1">
-        <p class="h4 subheader">Watch the trailer</p>
+      <div class="column small-11 small-centered medium-10">
+        <p class="subheader roboto-b">Watch the trailer</p>
       </div>
     </div>
     <div class="row align-center text-center">
@@ -102,11 +206,9 @@
 
   <!-- Author container-->
 
-  <div class="folat-left" data-interchange="[assets/img/interchange/greensml.png, small], [assets/img/interchange/greensmed.png, medium], [assets/img/interchange/greenslrg.png, large]"></div>
-
-  <div class="row align-middle author">
-    <div class="column no small-10 small-offset-1 small-order-2 medium-6 medium-offset-1 large-5 large-offset-1">
-      <h3>The author.</h3>
+  <div class="row align-middle align-center author" data-interchange="[assets/img/interchange/greensml.png, small], [assets/img/interchange/greensmed.png, medium], [assets/img/interchange/greenslrg.png, large]">
+    <div class="column text-left small-11 medium-8 small-order-2 large-5 large-offset-1 large-order-1">
+      <h1>The author.</h1>
       <div>
         <p>Cras tempor eu risus eget viverra. Aenean auctor vestibulum lacus, id viverra orci interdum non. Integer
           tincidunt venenatis porta. Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit
@@ -115,7 +217,7 @@
       <div>
         <img src="assets/img/interchange/signature.png" />
       </div>
-      <div>
+      <div class="rem">
         <span>Get Social</span>
         <span><i class="arrow fas fa-angle-right"></i></span>
         <span><a href="#" class="social"><i class="fab fa-instagram"></i></a><a href="#" class="social"><i class="fab fa-twitter"></i></a><a
@@ -123,8 +225,8 @@
       <button type="button" class="button bg-dark-green">Learn More</button>
       <button data-open="preorder" type="button" class="button bg-light-green">Pre-Order</button>
     </div>
-    <div class="column small-12 small-order-1 medium-12 large-6 text-right shadow">
-      <img data-interchange="[assets/img/interchange/book_open_sml.png, small], [assets/img/interchange/book_open_med.png, medium], [assets/img/interchange/book_open_lrg.png, large]" />
+    <div class="column text-right small-12 medium-12 small-order-1 large-6 large-order-2 shadow">
+      <img data-interchange="[assets/img/interchange/book_open_med.png, small], [assets/img/interchange/book_open_lrg.png, medium], [assets/img/interchange/book_open_lrg.png, large]" />
     </div>
   </div>
 
@@ -132,7 +234,7 @@
 
   <div class="container review">
     <div class="row align-center text-center">
-      <div class="column small-10 small-offset-1 medium-10 large-8">
+      <div class="column small-11 medium-10 large-8">
         <p class="h4"></p>
         <a href="#praise">
           <h5>Praise<i class="arrow fas fa-angle-down"></i></h5>
@@ -144,14 +246,13 @@
   </div>
 
   <!-- App container-->
-  <div class="float-right" data-interchange="[assets/img/interchange/tomatosml.png, small], [assets/img/interchange/tomatomed.png, medium], [assets/img/interchange/tomatolrg.png, large]"></div>
 
-  <div class="row app align-middle">
-    <div class="column text-right small-12 medium-12 large-5">
+  <div class="row app align-middle align-center" data-interchange="[assets/img/interchange/Tomatosml.png, small], [assets/img/interchange/Tomatomed.png, medium], [assets/img/interchange/Tomatolrg.png, large]">
+    <div class="column text-right small-8 medium-8 large-5">
       <img data-interchange="[assets/img/interchange/Phonesml.png, smalll], [assets/img/interchange/Phonemed.png, medium], [assets/img/interchange/Phonelrg.png, large]" />
     </div>
-    <div class="column small-10 small-offset-1 medium-12 large-5">
-      <h3>The App.</h3>
+    <div class="column small-11 medium-8 large-5">
+      <h1>The App.</h1>
       <p>Cras tempor eu risus eget viverra. Aenean auctor vestibulum lacus, id viverra orci interdum non. Integer
         tincidunt venenatis porta. Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit
         lacus, ut tempor risus iaculis vel. </p>
@@ -167,16 +268,15 @@
 
   <!-- Dynamic container -->
 
-  <div class="row align-center text-center dynamic">
-    <div class="column small-10 medium-4">
+  <div class="row align-spaced text-center dynamic">
+    <div class="column small-10 medium-5">
       <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Video Thumbsml.png, small], [assets/img/interchange/Video Thumbmed.png, medium], [assets/img/interchange/Video Thumblrg.png, ]"
           alt="My Plant-Based Lifestyle Discovery with Brooke Lark"></a>
       <a href="#" class="cat">Watch<i class="arrow fas fa-angle-up"></i></a>
       <p class="h5 margin-2">My Plant-Based Lifestyle Discovery with Brooke Lark</p>
       <a href="#" class="h6 more"><i class='arrow fas fa-arrow-right'></i>More Videos</a>
     </div>
-    <div class="column small-12 medium-1"></div>
-    <div class="column small-10 medium-4">
+    <div class="column small-10 medium-5">
       <a href="#"><img class="shadow" data-interchange="[assets/img/interchange/Recipe Thumgsml, small], [assets/img/interchange/Recipe Thumbmed.png, medium], [assets/img/interchange/Recipe Thumblrg.png, ]"
           alt="Creamy Vegan Cauliflower &amp; Leek Soup Recipe"></a>
       <a href="#" class="cat">Savour<i class="arrow fas fa-angle-up"></i></a>
@@ -187,27 +287,39 @@
 
   <!-- Bottom navigation -->
 
-  <div class="container text-center">
-    <div class="row footer align-spaced title-bar">
+  <div class="container text-center primary">
+    <div class="row align-spaced title-bar">
       <div class="column small-5 medium-2">
-        <a href="#"><img src="assets/img/vil_pl_reg.png" width="150" alt="Plant Based Village" /></a>
+        <a href="#"><img src="assets/img/interchange/vil_pl_reg.png" width="150" alt="Plant Based Village" /></a>
       </div>
-      <div class="column small-2 text-right" data-responsive-toggle="responsive-menu-bottom" data-hide-for="large">
-        <button class="menu-icon" type="button" data-toggle="responsive-menu-bottom"></button>
-      </div>
-      <div id="responsive-menu-bottom" class="column small-6 large-8">
+      <div class="column small-6 large-8">
         <ul class="menu">
           <li><a href="#book">The Book</a></li>
           <li><a href="#app">The App</a></li>
           <li><a href="#recipes">Recipes</a></li>
           <li><a href="#videos">Videos</a></li>
           <li><a href="#contact">Let's Connect</a></li>
-          <li><a href="#" class="social"><i class="fab fa-instagram"></a></i>
-          <li><a href="#" class="social"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" class="social"><i class="fab fa-youtube"></i></a></li>
+          <li>
+            <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social"><i class="fab fa-youtube"></i></a>
+          </li>
         </ul>
       </div>
       <div id="responsive-menu" class="column small-5 medium-2">
+        <button data-open="preorder" type="button" class="button bg-light-green">Get The Book</button>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mobile">
+    <div class="row align-center title-bar">
+      <div class="column small-4">
+        <a href="#"><img src="assets/img/interchange/vil_pl_reg.png" width="150" alt="Plant Based Village" /></a>
+      </div>
+      <div class="column small-4 text-center" data-hide-for="large">
+        <button class="menu-icon" type="button" data-open="menu"></button>
+      </div>
+      <div id="responsive-menu" class="column small-4">
         <button data-open="preorder" type="button" class="button bg-light-green">Get The Book</button>
       </div>
     </div>
@@ -222,44 +334,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Modal window for pre-order form -->
-
-  <div id="preorder" class="reveal" data-reveal>
-    <div class="title-bar">
-      <div class="title-bar-right">
-        <button data-close type="button" class="button">X</button></div>
-    </div>
-    <form>
-      <div class="row">
-        <div class="column small-6">
-          <h4>Pre-Order this book man!</h4>
-          <p>Nam eu odio fringilla, accumsan lorem quis, lobortis mi. Proin luctus velit lacus, ut tempor risus iaculis
-            vel.</p>
-        </div>
-        <div class="column small-6">
-          <input type="text" class="underline" placeholder="Your Name">
-          <input type="email" class="underline" placeholder="Your Email">
-          <input type="text" class="underline" placeholder="Card Number">
-          <button type="button" class="round hollow entity"><i class='fas fa-arrow-right'></i></button>
-        </div>
-      </div>
-  </div>
-  </form>
-  </div>
-
-  <!-- Modal window for newsletter form -->
-
-  <div id="subscribe" class="reveal" data-reveal>
-    <div class="title-bar">
-      <div class="title-bar-right">
-        <button data-close type="button" class="button">X</button></div>
-    </div>
-    <h1>Welcome To The Village</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend lorem eros, nec cursus quam bibendum nec.</p>
-  </div>
-
-
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/what-input/dist/what-input.js"></script>
