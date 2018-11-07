@@ -57,10 +57,16 @@
 // ----------
 
 @include font-face(
-  "RobotoCondensed",
+  "RobotoCondensedBold",
   "RobotoCondensed-Bold",
   "RobotoCondensed",
-  "sans"
+  "sans-serif"
+);
+@include font-face(
+  "RobotoCondensed",
+  "RobotoCondensed-Light",
+  "RobotoCondensed",
+  "sans-serif"
 );
 @include font-face(
   "PlayfairDisplay",
@@ -76,9 +82,10 @@
 );
 
 $playfairBold: "PlayfairDisplay", "serif";
-$robotoBold: "RobotoCondensed", "sans";
+$robotoCond: "RobotoCondensed", "sans-serif";
+$robotoBold: "RobotoCondensedBold", "sans-serif";
 
-// Custom colour variables
+// Custom color variables
 // ----------
 
 $white: #fff;
@@ -97,7 +104,7 @@ $med: 75%;
 $sml: 90%;
 
 // ----------
-// Custom background colour
+// Custom background color
 // ----------
 
 .bg-dark-green {
@@ -117,6 +124,19 @@ body {
 }
 
 // ----------
+// Custom padding and margins
+// ----------
+
+.pw {
+  padding: 0.7rem 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.mb {
+  margin: 3rem 0rem;
+}
+
+// ----------
 // Fonts
 // ----------
 
@@ -130,7 +150,9 @@ h4,
 .h4,
 h5,
 .h5,
-p {
+h6,
+.h6 p,
+.cat {
   font-family: $playfairBold;
 }
 
@@ -138,6 +160,22 @@ h1,
 .h1 {
   font-size: 4rem;
   padding-bottom: 2rem;
+}
+
+h3,
+.h3 {
+  margin: 1rem 0rem;
+}
+
+h5,
+.h5 {
+  margin: 1.5rem 1rem;
+}
+
+h6,
+.h6 {
+  font-size: 70%;
+  text-transform: uppercase;
 }
 
 .hero .h1 {
@@ -159,6 +197,20 @@ h1,
   font-size: 1.5rem;
   line-height: 0;
   margin-bottom: -1rem;
+}
+
+.menu {
+  font-family: $robotoBold;
+}
+
+.cat {
+  font-size: 90%;
+  color: $dark-green;
+}
+
+.button {
+  font-family: $robotoCond;
+  font-size: 75%;
 }
 
 .roboto-b {
@@ -191,7 +243,7 @@ h1,
   text-transform: uppercase;
   display: inline-flex;
   a {
-    padding: 0.35rem 0.79rem;
+    padding: 0.35rem 1.3rem;
     color: $dark-green;
     .link {
       position: absolute;
@@ -216,6 +268,8 @@ h1,
   }
 }
 
+/* Menu item animations */
+
 @keyframes grow {
   to {
     transform: scaleX(1);
@@ -236,12 +290,14 @@ h1,
   @include hide-for(large);
 }
 
-// Style for the mobile menu overlay
+/* Style for the mobile menu overlay */
 
 #menu {
   width: 100%;
   height: 100vh;
-  font-size: 3rem;
+  ul {
+    font-size: 1.75rem;
+  }
 }
 
 // ----------
@@ -278,22 +334,6 @@ h1,
 // Content
 // ----------
 
-.rem {
-  padding: 1.5rem 0rem 2.5rem;
-}
-.arrow {
-  margin: 0rem 0.5rem;
-}
-
-.button {
-  margin-right: 0rem 1.25rem;
-  border: none;
-  &:focus,
-  &:hover {
-    background-color: $black;
-  }
-}
-
 .author {
   padding-top: 12rem;
   background-color: #efefef;
@@ -317,7 +357,12 @@ h1,
   padding-top: 15rem !important;
 }
 
-// Manual width adjustments for the cell-centered class
+.dynamic {
+  padding: 5rem 0rem;
+  @include flex-align(spaced);
+}
+
+/* Manual width adjustments for the cell-centered class */
 
 .column-center {
   @include absolute-center;
@@ -327,11 +372,12 @@ h1,
   content: "";
   order: 0;
 }
+
 .subscribe {
   @include row-padding(2rem, 0rem);
 }
 
-// Background Images
+/* Background Images */
 
 #subscribe {
   background-image: url(./assets/img/interchange/Greens2lrg.png);
@@ -361,13 +407,45 @@ h1,
   padding: -3em;
 }
 
+/* Drop Shadows */
+
 .shadow {
   filter: drop-shadow(0rem 0rem 2rem rgba(0, 0, 0, 0.15));
 }
+
 .shadow-clip {
   clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
   width: 100%;
   height: 100%;
+}
+
+.rem {
+  padding: 1.5rem 0rem 2.5rem;
+}
+
+.button {
+  border: none;
+  &:focus,
+  &:hover {
+    background-color: $dark-green;
+  }
+}
+
+// ----------
+// UX interactivity
+// ----------
+
+/* Modal elements */
+
+/* Fancy Fade */
+
+.slide {
+  overflow: hidden;
+  padding: 0;
+  img {
+    position: relative;
+    transition: all 0.75s ease-out;
+  }
 }
 
 // ----------
@@ -387,6 +465,9 @@ h1,
   &:hover,
   &:active {
     @include hollow-fill($dark-green);
+    .arrow {
+      stroke: $white;
+    }
   }
 }
 
@@ -399,9 +480,43 @@ h1,
   height: 1rem;
   fill: none;
   stroke: $dark-green;
-  stroke-width: 2px;
+  stroke-width: 1px;
   stroke-linecap: butt;
+}
+
+.arrow {
+  margin: 0rem 0.5rem;
+  transform: translateY(25%);
+}
+
+.slant {
+  margin: 0rem 0.5rem;
   transform: translateY(40%);
+}
+
+ul.point > li:before,
+ol.custom-bullet > li:before {
+  content: "";
+  height: 1em;
+  width: 1em;
+  display: block;
+  float: left;
+  margin-left: -1.5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+ul.point li{
+  list-style-type: none;
+  &:before {
+    content: "";
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 18 18' preserveAspectRatio='xMidYMid meet'><path fill='none' stroke='black' d='M1 3l6 5l6 -5' /></svg>");
+    background-position: center;
+    width: 1rem;
+    height: 25px;
+    margin-right: 5px;
+  }
 }
 
 .social {
@@ -430,12 +545,21 @@ h1,
   }
 }
 
+/* Preorder modal */
+
+#preorder input {
+  margin-bottom: 1rem;
+}
+
 // ----------
 // Footer
 // ----------
 
 footer span {
   font-size: 60%;
+}
+footer {
+  padding-bottom: 3rem;
 }
 
 .footer {
@@ -465,5 +589,21 @@ footer span {
   .row.author,
   .row.app {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .author {
+    @include row-padding(2rem, 0rem);
+  }
+  .review {
+    padding-top: 3rem;
+  }
+  .app {
+    margin-top: 0rem;
+    background-size: 60vw;
+  }
+  .dynamic {
+    @include flex-align(center);
   }
 }
