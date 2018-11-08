@@ -369,15 +369,6 @@ ul.point {
     background-position: 50%;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    .book {
-      z-index: 998;
-      img {
-        max-width: 60vw;
-      }
-    }
-    .subheader {
-      text-align: center;
-    }
   }
   padding: 0rem 0rem 4rem;
   .play-float {
@@ -392,18 +383,12 @@ ul.point {
   }
   @include breakpoint(medium) {
     .paralax {
-      background-size: contain;
-      background-position: 50% 0;
-      .book {
-        display: none;
-        z-index: 998;
-        img {
-          max-width: 100%;
-        }
-      }
-      .subheader {
-        text-align: left;
-      }
+      background-size: 90%;
+      background-position: 50%;
+    }
+    .book {
+      display: none;
+      z-index: 998;
     }
     .overlap-left {
       margin-top: 5rem;
@@ -424,6 +409,7 @@ ul.point {
     .paralax {
       @include row-padding(5rem, 0rem);
       margin-bottom: 3rem;
+      background-size: contain;
     }
     .play-float {
       text-align: left;
