@@ -7,10 +7,10 @@ var paralaxImg = $('.hero .book');
 
 // Creates a dynamic height for the paralax background image.
 
-function dynamicImage(vw) {
+function dynamicImage() {
 
     $('.paralax').css({
-        height: paralaxImg.innerHeight() + 100
+        height: paralaxImg.innerHeight() + 200
     });
 
 }
@@ -34,7 +34,7 @@ function uxFade() {
 
         var winTop = $(window).scrollTop();
         var winHeight = $(window).height();
-        var uxChocolate = winTop + (winHeight / 3);
+        var uxChocolate = winTop + (winHeight * 0.75);
         var uxTop = uxCur.offset();
 
         if (uxTop.top < uxChocolate) {
@@ -47,29 +47,26 @@ function uxFade() {
 
 }
 
-$(document).ready(function () {
+paralaxImg.fadeIn('slow');
+$('.preloader').delay(1500).fadeOut('slow', function () {
+    $('.play-float').fadeIn('slow');
+});
 
-    dynamicImage();
+$('.link').each(function () {
 
-    paralaxImg.fadeIn('slow');
-    $('.preloader').delay(1500).fadeOut('slow');
+    // Get the width of the parent a link for each SVG element
+    var parentWidth = $(this).parent().width();
 
-    $('.link').each(function () {
-
-        // Get the width of the parent a link for each SVG element
-        var parentWidth = $(this).parent().width();
-
-        $(this).css({
-            width: parentWidth
-        });
-
-        // Modify the length of the SVG path so it will center
-
-        $(this).html('<path d="M1 2h' + parentWidth + '" />')
-
+    $(this).css({
+        width: parentWidth
     });
+
+    // Modify the length of the SVG path so it will center
+
+    $(this).html('<path d="M1 2h' + parentWidth + '" />')
 
 });
 
+paralaxImg.on('ready', dynamicImage);
 $(window).on('resize', dynamicImage);
 $(window).on("scroll", uxFade);

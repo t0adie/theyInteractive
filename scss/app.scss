@@ -53,7 +53,8 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-// Custom Fonts
+// ----------
+// @font-face
 // ----------
 
 @include font-face(
@@ -85,27 +86,23 @@ $playfairBold: "PlayfairDisplay", "serif";
 $robotoCond: "RobotoCondensed", "sans-serif";
 $robotoBold: "RobotoCondensedBold", "sans-serif";
 
-// Custom color variables
 // ----------
+// Custom Variables
+// ----------
+
+/* Color variables */
 
 $white: #fff;
 $light: #efefef;
 $dark-green: #144e2f;
 $light-green: #527b6d;
 
-// Viewport percentages
-// ----------
+/* Custom calculations */
 
-$fullWidth: 100vw;
-$fullHeight: 80vh;
+$em: em;
+$px: px;
 
-$lrg: 60%;
-$med: 75%;
-$sml: 90%;
-
-// ----------
-// Custom background color
-// ----------
+/* Background color */
 
 .bg-dark-green {
   background-color: $dark-green;
@@ -123,12 +120,14 @@ body {
   background-color: $white;
 }
 
-// ----------
-// Custom padding and margins
-// ----------
+/* Padding and margins */
 
 .pw {
   padding: 0.7rem 1.5rem;
+  margin: 0;
+}
+
+.mr {
   margin-right: 1.5rem;
 }
 
@@ -153,18 +152,27 @@ h5,
 h6,
 .h6 p,
 .cat {
+  color: $dark-green;
   font-family: $playfairBold;
 }
 
 h1,
 .h1 {
-  font-size: 4rem;
+  font-size: 3.75rem;
   padding-bottom: 2rem;
 }
 
 h3,
 .h3 {
   margin: 1rem 0rem;
+  @include breakpoint(medium) {
+    font-size: 1.75rem;
+    line-height: 1rem;
+  }
+  @include breakpoint(xlarge) {
+    font-size: 2.5rem;
+    line-height: 1rem;
+  }
 }
 
 h5,
@@ -178,25 +186,40 @@ h6,
   text-transform: uppercase;
 }
 
-.hero .h1 {
-  font-size: 12rem;
-  margin-top: -4rem;
+.hero {
+  .h1 {
+    font-size: 12rem;
+    margin-top: -4rem;
+  }
+  .h2 {
+    font-size: 9rem;
+    line-height: 5rem;
+  }
+  .h3 {
+    font-size: 1.75rem;
+    line-height: 3rem;
+    @include breakpoint(medium) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+  .h4 {
+    font-size: 1.5rem;
+    line-height: 0;
+    margin-bottom: -1rem;
+  }
+  .h5 {
+    margin: 0rem 2rem 3rem;
+  }
 }
 
-.hero .h2 {
-  font-size: 9rem;
-  line-height: 5rem;
+.margin-up {
+  margin-top: -3rem;
 }
 
-.hero .h3 {
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
-.hero .h4 {
-  font-size: 1.5rem;
-  line-height: 0;
-  margin-bottom: -1rem;
+ul.point {
+  color: $light-green;
+  font-family: $robotoCond;
 }
 
 .menu {
@@ -228,14 +251,19 @@ h6,
   width: 100%;
   height: 100vh;
   background-color: $light;
-  z-index: 999;
+  z-index: 997;
 }
 
 // ----------
 // Navigation
 // ----------
 
+.header {
+  @include row-padding(1rem, 0rem);
+}
+
 .title-bar {
+  color: $dark-green;
   background-color: transparent;
 }
 
@@ -260,6 +288,7 @@ h6,
       animation: grow 0.25s ease-out forwards;
     }
   }
+
   .social {
     @include social();
   }
@@ -270,22 +299,26 @@ h6,
 
 /* Menu item animations */
 
+// This makes the SVG line expand  below the navigation link
+
 @keyframes grow {
   to {
     transform: scaleX(1);
   }
 }
 
+/* Sammich icon */
+
 .menu-icon {
   @include hamburger($dark-green);
 }
-.title-bar {
-  color: $dark-green;
-}
+
+/* Responsive layout for menu */
 
 .primary {
   @include show-for(large);
 }
+
 .mobile {
   @include hide-for(large);
 }
@@ -304,30 +337,53 @@ h6,
 // Hero Banner
 // ----------
 
-.hero .row {
-  @include row-padding(4rem, 0rem);
-}
-
-.paralax {
-  height: $fullWidth;
-  background-color: $light;
-  background-size: contain;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-}
-
-.book {
-  display: none;
-  z-index: 999;
-}
-
-.overlap-left {
-  margin-left: -5rem;
-}
-
-.overlap-right {
-  margin-right: -5rem;
+.hero {
+  padding: 0rem 0rem 4rem;
+  .play-float {
+    position: relative;
+    display: none;
+    padding-bottom: 4rem;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 3rem;
+    z-index: 999;
+  }
+  @include breakpoint(medium) {
+    .paralax {
+      background-color: $light;
+      background-size: contain;
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+    }
+    .book {
+      display: none;
+      z-index: 998;
+    }
+    .overlap-left {
+      margin-left: -5rem;
+      .play-float {
+        position: relative;
+        display: none;
+        margin-top: -5rem;
+        margin-bottom: 0.5rem;
+        margin-left: -5rem;
+        z-index: 999;
+      }
+    }
+    .overlap-right {
+      margin-right: -5rem;
+    }
+  }
+  @include breakpoint(landscape) {
+    .paralax {
+      @include row-padding(5rem, 0rem);
+      margin-bottom: 3rem;
+    }
+    .show-for-landscape {
+      display: flex !important;
+    }
+  }
 }
 
 // ----------
@@ -335,42 +391,71 @@ h6,
 // ----------
 
 .author {
-  padding-top: 12rem;
+  padding: 6rem 0rem 3rem;
   background-color: #efefef;
   background-position-x: left;
   background-repeat: no-repeat;
-  background-size: 25vw;
+  background-size: 90vw;
   background-blend-mode: multiply;
+  @include breakpoint(small only) {
+    h1,
+    .h1 {
+      font-size: 250%;
+    }
+  }
+  @include breakpoint(medium) {
+    padding-top: 12rem;
+    background-size: 50vw;
+    h1,
+    .h1 {
+      line-height: 1rem;
+    }
+    .offset {
+      @include grid-column-offset(1);
+    }
+  }
+  @include breakpoint(large) {
+    padding-top: 12rem;
+    background-size: 25vw;
+    .offset {
+      @include grid-column-offset(2);
+    }
+  }
 }
 
 .review {
-  padding-top: 8rem;
+  padding-top: 3rem;
+  @include breakpoint(medium) {
+    padding-top: 8rem;
+  }
 }
 
 .app {
+  margin-top: 0rem;
+  padding-top: 5rem;
+  background-size: 60vw;
   background-color: #efefef;
   background-position-x: right;
   background-repeat: no-repeat;
-  background-size: 25vw;
+  background-size: 60vw;
   background-blend-mode: multiply;
-  margin-top: -7rem;
-  padding-top: 15rem !important;
+  @include breakpoint(medium) {
+    margin-top: -7rem;
+    padding-top: 15rem;
+    background-size: 25vw;
+  }
 }
 
 .dynamic {
-  padding: 5rem 0rem;
-  @include flex-align(spaced);
-}
-
-/* Manual width adjustments for the cell-centered class */
-
-.column-center {
-  @include absolute-center;
-}
-
-.row.dynamic::before {
-  content: "";
-  order: 0;
+  @include flex-align(center);
+  @include row-padding(5rem, 0rem);
+  &:before {
+    content: "";
+    order: 0;
+  }
+  @include breakpoint(medium) {
+    @include flex-align(spaced);
+  }
 }
 
 .subscribe {
@@ -380,12 +465,25 @@ h6,
 /* Background Images */
 
 #subscribe {
-  background-image: url(./assets/img/interchange/Greens2lrg.png);
-  background-position: 50% 434px;
+  padding: 0 0 5rem;
+  background-image: url(./assets/img/interchange/Greensmed.png);
+  background-position: left bottom;
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 60vh;
+  background-size: 100%;
+  .content {
+    padding-top: 25%;
+  }
+  @include breakpoint(medium) {
+    padding: 0 0 8rem;
+    background-image: url(./assets/img/interchange/Greensmed.png);
+    background-position: left 8rem;
+    background-repeat: no-repeat;
+    .content {
+      padding-top: 0rem;
+    }
+  }
 }
+
 #preorder {
   background-image: url(./assets/img/interchange/Tomatolrg.png);
   background-position: right bottom;
@@ -452,6 +550,8 @@ h6,
 // Buttons and Icons
 // ----------
 
+/* Button customization */
+
 .round {
   @include circle(40px);
   border-color: $black;
@@ -471,9 +571,36 @@ h6,
   }
 }
 
-.play {
-  @include css-triangle(0.75rem, $dark-green, right);
+.hover {
+  position: relative;
+  .play {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+  }
 }
+
+/* Play button */
+
+.play {
+  width: 5rem;
+  height: 5rem;
+  filter: drop-shadow(0rem 0rem 1rem rgba(0, 0, 0, 0.15));
+  transform: translateY(40%);
+  transform-origin: -50%;
+  circle {
+    fill: $white;
+  }
+  path {
+    fill: $dark-green;
+    stroke: $dark-green;
+    stroke-linejoin: round;
+    stroke-width: 3px;
+    transform: translate(42%, 40%);
+  }
+}
+
+/* Arrows and slants */
 
 .icons {
   width: 1rem;
@@ -483,7 +610,9 @@ h6,
   stroke-width: 1px;
   stroke-linecap: butt;
 }
-
+.boink {
+  transform: translateY(25%);
+}
 .arrow {
   margin: 0rem 0.5rem;
   transform: translateY(25%);
@@ -494,33 +623,40 @@ h6,
   transform: translateY(40%);
 }
 
-ul.point > li:before,
-ol.custom-bullet > li:before {
-  content: "";
-  height: 1em;
-  width: 1em;
-  display: block;
-  float: left;
-  margin-left: -1.5em;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
+/* Custom ul icons */
 
-ul.point li{
+ul.point {
+  padding-bottom: 2rem;
   list-style-type: none;
-  &:before {
-    content: "";
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 18 18' preserveAspectRatio='xMidYMid meet'><path fill='none' stroke='black' d='M1 3l6 5l6 -5' /></svg>");
-    background-position: center;
-    width: 1rem;
-    height: 25px;
-    margin-right: 5px;
+  li {
+    line-height: 1.75rem;
+    &:before {
+      width: 17px;
+      height: 30px;
+      margin-right: 0px;
+      margin-left: -18px;
+      display: block;
+      float: left;
+      content: "";
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%…xMidYMid meet'><path fill='none' stroke='#527b6d' d='M2 1l6 5l-6 5' /></svg>");
+      background-position-y: 0.5rem;
+      background-size: 100%;
+    }
   }
 }
 
+/* Social icons */
+
 .social {
+  color: $dark-green;
   @include social();
+  &:visited,
+  &active {
+    color: $dark-green;
+  }
+  &:hover {
+    color: $light-green;
+  }
 }
 
 // ----------
@@ -541,6 +677,7 @@ ul.point li{
 .newsletter {
   @include row-padding(1.5rem, 0rem);
   h3 {
+    font-size: 2rem;
     margin-bottom: 0px;
   }
 }
@@ -555,11 +692,11 @@ ul.point li{
 // Footer
 // ----------
 
-footer span {
-  font-size: 60%;
-}
 footer {
   padding-bottom: 3rem;
+  span {
+    font-size: 60%;
+  }
 }
 
 .footer {
@@ -573,37 +710,9 @@ footer {
 // ----------
 
 @media screen and (orientation: landscape) {
-  .show-for-landscape,
-  .hide-for-portrait {
-    display: flex !important;
-  }
   .row.hero,
   .row.author,
   .row.app {
     max-width: 100%;
-  }
-}
-
-@media screen and (min-width: 65em) {
-  .row.hero,
-  .row.author,
-  .row.app {
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 39.9375em) {
-  .author {
-    @include row-padding(2rem, 0rem);
-  }
-  .review {
-    padding-top: 3rem;
-  }
-  .app {
-    margin-top: 0rem;
-    background-size: 60vw;
-  }
-  .dynamic {
-    @include flex-align(center);
   }
 }
