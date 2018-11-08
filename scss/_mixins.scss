@@ -1,3 +1,7 @@
+@mixin text-align($pos) {
+    text-align: $pos;
+}
+
 @mixin margin-auto() {
     margin-left: auto;
     margin-right: auto;

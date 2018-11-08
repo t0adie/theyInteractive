@@ -28,7 +28,7 @@ function uxFade() {
         var uxWidth = uxCur.innerWidth();
 
         // Hide all of the elements on their respective sides
-        $(this).attr('style', uxDir + ': ' + uxWidth + 'px').css({
+        uxCur.attr('style', uxDir + ': ' + uxWidth + 'px').css({
             opacity: 0
         });
 
@@ -38,7 +38,8 @@ function uxFade() {
         var uxTop = uxCur.offset();
 
         if (uxTop.top < uxChocolate) {
-            $(this).attr('style', uxDir + ': 0').css({
+
+            uxCur.attr('style', uxDir + ': 0').css({
                 opacity: 1
             });
         }
@@ -47,25 +48,46 @@ function uxFade() {
 
 }
 
-paralaxImg.fadeIn('slow');
-$('.preloader').delay(1500).fadeOut('slow', function () {
-    $('.play-float').fadeIn('slow');
-});
+$(document).ready(function () {
 
-$('.link').each(function () {
-
-    // Get the width of the parent a link for each SVG element
-    var parentWidth = $(this).parent().width();
-
-    $(this).css({
-        width: parentWidth
+    paralaxImg.fadeIn('slow');
+    $('.preloader').delay(1500).fadeOut('slow', function () {
+        $('.play-float').fadeIn('slow');
     });
 
-    // Modify the length of the SVG path so it will center
+    $('.link').each(function () {
 
-    $(this).html('<path d="M1 2h' + parentWidth + '" />')
+        var lnxCur = $(this);
 
-});
+        // Get the width of the parent a link for each SVG element
+        var lineWidth = lnxCur.parent().width();
+        var totalWidth = lnxCur.closest('li').width();
+
+        lnxCur.css({
+            width: lineWidth,
+            left: (totalWidth - lineWidth) / 2
+        });
+
+
+        // Modify the length of the SVG path so it will center
+
+        $(this).html('<path d="M1 2h' + lineWidth + '" />')
+
+    });
+
+    // Adjusts the height of the orbit-container 
+    // to fit the highest orbit-slide element
+
+    var maxHeight = 0;
+
+    $(".orbit-slide").each(function () {
+        if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+    });
+
+    $(".orbit-container").height(maxHeight + 32);
+    console.log(maxHeight);
+
+})
 
 paralaxImg.on('ready', dynamicImage);
 $(window).on('resize', dynamicImage);
