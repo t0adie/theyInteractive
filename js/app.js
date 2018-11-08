@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     paralaxImg.fadeIn('slow');
     $('.preloader').delay(1500).fadeOut('slow', function () {
-        $('.play-float').fadeIn('slow');
+        $('.play').fadeIn('slow');
     });
 
     $('.link').each(function () {

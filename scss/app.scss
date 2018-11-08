@@ -121,7 +121,7 @@ $light-green: #527b6d;
 $em: em;
 $px: px;
 
-/* Background color */
+/* Color */
 
 .bg-dark-green {
   background-color: $dark-green;
@@ -137,6 +137,10 @@ body {
 
 .bg-white {
   background-color: $white;
+}
+
+.subheader {
+  color: $light-green;
 }
 
 /* Padding and margins */
@@ -374,7 +378,6 @@ ul.point {
   .play-float {
     text-align: center;
     position: relative;
-    display: none;
     padding-bottom: 4rem;
     margin-top: -1rem;
     margin-bottom: 0.5rem;
@@ -399,7 +402,6 @@ ul.point {
     }
     .play-float {
       position: relative;
-      display: none;
       margin-top: -1rem;
       margin-bottom: 0.5rem;
       z-index: 999;
@@ -414,7 +416,6 @@ ul.point {
     .play-float {
       text-align: left;
       position: relative;
-      display: none;
       margin-top: -5rem;
       margin-bottom: 0.5rem;
       margin-left: -5rem;
@@ -466,7 +467,7 @@ ul.point {
     text-align: center;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
   .row {
@@ -503,10 +504,23 @@ ul.point {
   padding-top: 3rem;
   h3,
   .h3 {
-    line-height: 3.5rem;
+    color: $light-green;
+    line-height: 2rem;
   }
   @include breakpoint(medium) {
-    padding-top: 8rem;
+    padding-top: 4rem;
+    h3,
+    .h3 {
+      padding-bottom: 0.5rem;
+      line-height: 2.75rem;
+    }
+  }
+  @include breakpoint(xlarge) {
+    h3,
+    .h3 {
+      padding-bottom: 1rem;
+      line-height: 3.5rem;
+    }
   }
 }
 
@@ -519,10 +533,27 @@ ul.point {
   background-repeat: no-repeat;
   background-size: 60vw;
   background-blend-mode: multiply;
+  .right-text {
+    text-align: center;
+  }
+  img {
+    max-width: 80%;
+  }
   @include breakpoint(medium) {
+    margin-top: -4rem;
+    padding-top: 15rem;
+    background-size: 40vw;
+  }
+  @include breakpoint(large) {
     margin-top: -7rem;
     padding-top: 15rem;
     background-size: 25vw;
+    .right-text {
+      text-align: right;
+    }
+    img {
+      max-width: 100%;
+    }
   }
 }
 
@@ -554,13 +585,6 @@ ul.point {
     top: 50% !important;
     transform: translateY(-50%);
   }
-}
-
-#preorder {
-  background-image: url(./assets/img/interchange/Tomatolrg.png);
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 15rem;
 }
 
 .float-right {
@@ -615,6 +639,27 @@ ul.point {
   }
 }
 
+#subscribe {
+  background-image: url(./assets/img/interchange/Tomatolrg.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 15rem;
+  img {
+    max-width: 80%;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  @include breakpoint(medium) {
+    background-position: right 14rem;
+    background-repeat: no-repeat;
+    background-size: 20rem;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 /* Fancy Fade */
 
 .slide {
@@ -666,6 +711,8 @@ ul.point {
 /* Play button */
 
 .play {
+  position: relative;
+  display: none;
   width: 5rem;
   height: 5rem;
   filter: drop-shadow(0rem 0rem 1rem rgba(0, 0, 0, 0.15));

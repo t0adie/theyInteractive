@@ -17,7 +17,7 @@
 
   <div class="preloader"></div>
 
-  <!-- Modal window for video -->
+  <!-- Modal window for pre-order form -->
 
   <div id="video" class="reveal shadow" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
     <div class="row title-bar align-right">
@@ -43,18 +43,16 @@
         <button data-close type="button" class="round hollow">X</button>
       </div>
     </div>
-    <div class="row content">
-      <div class="column small-12 medium-6 text-center">
-        <p><img data-interchange="[assets/img/interchange/Book_sml.png, small], [assets/img/interchange/Book_med.png, medium], [assets/img/interchange/Book_lrg.png, large]" /></p>
-      </div>
-      <div class="column pw small-12 medium-6">
+    <div class="row align-center content">
+      <div class="column pw small-12 medium-8">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend lorem eros, nec cursus quam bibendum
           nec.</p>
+      </div>
+      <div class="column text-center small-12">
         <button type="button" class="button bg-dark-green pw mr">Learn More</button>
         <button type="button" class="button bg-light-green pw">Pre-Order</button>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Modal window for popup menu -->
@@ -127,6 +125,25 @@
   <!-- Hero container -->
 
   <div class="hero">
+    <div class="row align-center mobile paralax" data-interchange="[assets/img/interchange/Greens2sml.png, small], [assets/img/interchange/Greens2med.png, medium]">
+      <div class="column small-11 medium-10">
+        <p class="h3 subheader">Discover your guide to a</p>
+        <p class="h2 margin-down text-center">new</p>
+      </div>
+      <div class="column book text-center small-11 medium-8" data-tooltip tabindex="1" title="Layout changes from landscape to portrait. This puts empasis on the book."
+        data-position="bottom" data-alignment="center">
+        <img data-interchange="[assets/img/interchange/Book_med.png, small], [assets/img/interchange/Book_med.png, medium]" />
+      </div>
+      <div class="column small-11 medium-10">
+        <p class="h2 margin-up text-center">you.</p>
+        <p class="subheader roboto-b play-float">
+          <svg data-open="video" class="play" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle class="shadow" cx="50" cy="50" r="40"></circle>
+            <path d="M1 1 l20 12 l-20 12 Z" />
+          </svg>
+          Watch the trailer</p>
+      </div>
+    </div>
     <div class="row align-middle align-center primary paralax" data-interchange="[assets/img/interchange/Greens2med.png, medium], [assets/img/interchange/Greens2lrg.png, large]"
       data-parallax>
       <div class="column overlap-right text-right">
@@ -149,24 +166,7 @@
         </a>
       </div>
     </div>
-    <div class="row align-center mobile paralax" data-interchange="[assets/img/interchange/Greens2sml.png, small], [assets/img/interchange/Greens2med.png, medium]">
-      <div class="column small-11 medium-10">
-        <p class="h3 subheader">Discover your guide to a</p>
-        <p class="h2 margin-down text-center">new</p>
-      </div>
-      <div class="column book text-center small-11 medium-8">
-        <img data-interchange="[assets/img/interchange/Book_med.png, small], [assets/img/interchange/Book_med.png, medium]" />
-      </div>
-      <div class="column small-11 medium-10">
-        <p class="h2 margin-up text-center">you.</p>
-        <p class="subheader roboto-b play-float">
-          <svg data-open="video" class="play" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <circle class="shadow" cx="50" cy="50" r="40"></circle>
-            <path d="M1 1 l20 12 l-20 12 Z" />
-          </svg>
-          Watch the trailer</p>
-      </div>
-    </div>
+
     <div class="row align-center text-center">
       <div class="column small-11 medium-8">
         <p class="h5 subheader"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
@@ -181,7 +181,8 @@
   <!-- Newsletter container -->
 
   <form class="bg-white">
-    <div class="container newsletter">
+    <div class="container newsletter" data-tooltip tabindex="1" title="Columns will stack when changed to a medium screen size so there is still a call to action."
+    data-position="bottom" data-alignment="center">
       <div class="row align-center">
         <div class="column small-12 large-6 right-text">
           <h3>Get the latest from the Village</h3>
@@ -228,7 +229,8 @@
       <button type="button" class="button bg-dark-green pw mr">Learn More</button>
       <button type="button" class="button bg-light-green pw">Pre-Order</button>
     </div>
-    <div class="column text-right small-12 medium-12 small-order-1 large-6 large-order-2 shadow slide">
+    <div class="column text-right small-12 medium-12 small-order-1 large-6 large-order-2 shadow slide" data-tooltip tabindex="1" title="Viewers like images and graphics. So, placing the image first prompots the viewer to read on."
+    data-position="bottom" data-alignment="center">
       <img data-slide="left" data-interchange="[assets/img/interchange/book_open_med.png, small], [assets/img/interchange/book_open_lrg.png, medium], [assets/img/interchange/book_open_lrg.png, large]" />
     </div>
   </div>
@@ -239,12 +241,6 @@
     <div class="row align-center text-center">
       <div class="columns small-11 medium-10">
         <div class="orbit" role="region" aria-label="Book Reviews" data-orbit data-options="bullets:false;nav-buttons:false;animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-          <a href="#praise">
-            <h5 class="cat">Praise<svg class="icons slant" version="1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 18 18">
-                <path d="M1 3l6 5l6 -5" />
-              </svg></h5>
-          </a>
           <ul class="orbit-container">
             <li class="is-active orbit-slide">
               <div>
@@ -275,7 +271,8 @@
   <!-- App container-->
 
   <div class="row app align-middle align-center" data-interchange="[assets/img/interchange/Tomatosml.png, small], [assets/img/interchange/Tomatomed.png, medium], [assets/img/interchange/Tomatolrg.png, large]">
-    <div class="column right-text small-8 medium-8 large-4 slide">
+    <div class="column text-right small-8 medium-8 large-4 slide" data-tooltip tabindex="1" title="Viewers like images and graphics. So, placing the image first prompots the viewer to read on."
+    data-position="bottom" data-alignment="center">
       <img data-slide="right" data-interchange="[assets/img/interchange/Phonesml.png, smalll], [assets/img/interchange/Phonemed.png, medium], [assets/img/interchange/Phonelrg.png, large]" />
     </div>
     <div class="column small-11 medium-8 large-4">
