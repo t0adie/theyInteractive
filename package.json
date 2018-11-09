@@ -1,7 +1,7 @@
 {
   "name": "foundation-sites-template",
   "version": "1.0.0",
-  "description": "Basic template for a new Foundation for Sites project.",
+  "description": "Test site for Derek Naulls.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",

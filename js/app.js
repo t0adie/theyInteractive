@@ -48,7 +48,7 @@ function uxFade() {
 
 }
 
-$(document).ready(function () {
+$().ready(function () {
 
     paralaxImg.fadeIn('slow');
     $('.preloader').delay(1500).fadeOut('slow', function () {
